@@ -1,0 +1,11 @@
+.carousel {
+    background-color: #FDECFF !important;
+    padding: 50px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.carousel h2 {
+    font-weight: 700;
+    font-size: 35px;
+}
