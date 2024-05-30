@@ -1,7 +1,9 @@
 .navbar {
     display: flex;
+    margin-top: 0px;
     justify-content: space-evenly;
     padding-top: 10px;
+    background-color: white;
 }
 
 .nav-items ul {

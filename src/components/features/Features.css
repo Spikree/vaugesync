@@ -1,0 +1,49 @@
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.big-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #e3f5ff;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.feature-header h1 {
+    background-color: #e3f5ff;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.small-card {
+    display: flex;
+    padding: 100px;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+}
+
+.broadcast a {
+    border: 2px solid #000;
+    border-radius: 10px;
+    margin: 0 0px;
+    padding: 10px 10px 8px;
+    transition: 0.4s;
+    background-color: #00e785;
+}
+
+.broadcast a:hover {
+    border-radius: 50px;
+    transition: 0.5s;
+    background-color: white;
+}
+
+.broadcast h1 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}

@@ -1,0 +1,85 @@
+.footer-main {
+    background-color: black;
+    height: 500px;
+}
+
+.row-1 {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.row-1 button {
+    background-color: black;
+    color: white;
+    border-color: white;
+    border-style:groove;
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+hr {
+    color: white;
+    max-width: 1200px;
+}
+
+.about-us ul li {
+    color: white;
+}
+
+.about-us ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.need-help ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.need-help ul li {
+    color: white;
+}
+
+.options {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+}
+
+.terms-of-use ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.terms-of-use ul li {
+    color: white;
+}
+
+.about-us ul .li-1 {
+    color: gray;
+}
+
+.need-help ul .li-1 {
+    color: gray;
+}
+
+.terms-of-use {
+    padding-top: 40px;
+}
+
+.row-3 {
+    color: white;
+    display: flex;
+    justify-content: end;
+    padding-right: 160px;
+    padding-top: 20px;
+    font-size: medium;
+}
+
+
