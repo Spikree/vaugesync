@@ -1,5 +1,6 @@
 .home {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: left;
     align-items: center;
@@ -51,4 +52,15 @@
     margin-top: 35px;
     padding-left: 0;
     margin-left: 0;
+}
+
+@media (max-width: 717px) {
+    .hero-buttons .two {
+        display: none;
+    }
+
+    .image img{
+        height: 350px;
+        margin-top: 40px;
+    }
 }

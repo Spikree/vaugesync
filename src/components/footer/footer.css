@@ -82,4 +82,12 @@ hr {
     font-size: medium;
 }
 
+@media (min-width: 414px) and (max-width: 414px) {
+    .footer-main {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+}
 
