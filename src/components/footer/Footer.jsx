@@ -12,35 +12,13 @@ export default function Footer() {
             </div>
             <hr />
             <div className="row-2">
-            <div className="options">
-                <div className="about-us">
-                    <ul>
-                        <li className='li-1'>About us</li>
-                        <li>Our company</li>
-                        <li>Media center</li>
-                        <li>History</li>
-                        <li>Careers</li>
-                        <li>Leadership</li>
-                    </ul>
-                </div>
-                <div className="need-help">
-                        <ul>
-                            <li className='li-1'>Need help</li>
-                            <li>FAQ</li>
-                            <li>Sitemap</li>
-                            <li>Contact us</li>
-                        </ul>
-                </div>
-                <div className="terms-of-use">
-                    <ul>
-                        <li>Terms of use</li>
-                        <li>Privacy policy</li>
-                        <li>Financial & policy Documents</li>
-                    </ul>
-                </div>
+                <ul>
+                    <li>About us</li>
+                    <li>Support</li>
+                    <li>Sales</li>
+                    <li>Marketing</li>
+                </ul>
             </div>
-            </div>
-            <hr />
             <div className="row-3">
                 <p>© {year} Wavesync. All rights reserved.</p>
             </div>

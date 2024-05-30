@@ -1,13 +1,12 @@
 .footer-main {
     background-color: black;
-    height: 500px;
+    /* height: 500px; */
 }
 
 .row-1 {
     display: flex;
     justify-content: space-around;
-    padding-top: 60px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 .row-1 button {
@@ -77,17 +76,29 @@ hr {
     color: white;
     display: flex;
     justify-content: end;
-    padding-right: 160px;
+    padding-right: 100px;
     padding-top: 20px;
     font-size: medium;
 }
 
+.row-2 ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    padding-top: 20px;
+}
+
 @media (min-width: 414px) and (max-width: 414px) {
-    .footer-main {
-        width: 100%;
-        height: auto;
-        padding: 0;
-        margin: 0;
-    }
+   .row-1 {
+    padding-top: 0;
+   }
+
+   .footer-main .row-3 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-right: 30px;
+   }
 }
 

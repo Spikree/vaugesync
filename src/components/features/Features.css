@@ -49,8 +49,26 @@
     margin-bottom: 0;
 }
 
+
 @media (max-width: 717px) {
     .big-card {
-        display: none;
+        max-width: 500px;
+        gap: 70px;    
+    }
+
+    .big-card .mid-small-card {
+        flex-direction: column-reverse;
+    }
+
+    .small-card {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0;
+        margin: 0;
+        width: 0px;
+    }
+
+    .broadcast {
+        width: 300px;
     }
 }

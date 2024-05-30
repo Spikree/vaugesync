@@ -23,7 +23,7 @@ const Features = () => {
                 </div>
             </div>
 
-            <div className="small-card">
+            <div className="small-card mid-small-card ">
                 <div className="broadcast">
                     <h1>Chatbots</h1>
                     <p>Create no-code chatbots to provide instant responses to common requests.</p>
