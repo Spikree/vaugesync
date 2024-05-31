@@ -9,6 +9,7 @@
 
 .image img{
     height: 450px;
+    transition: 2.5ms;
 }
 
 .hero-header p {
