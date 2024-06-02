@@ -2,6 +2,7 @@ import "./Hero.css";
 import arnav from "../../assets/arnav.jpg";
 import anvay from "../../assets/anvay.jpg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [heroImage, setHeroImage] = useState(anvay);
@@ -25,9 +26,9 @@ const Hero = () => {
           <a className="one" href="">
             Free 7 Day Trial
           </a>
-          <a className="two" href="">
+          <Link to="/book-a-demo" className="two" href="">
             or book a Demo Today
-          </a>
+          </Link>
         </div>
       </div>
       <div
