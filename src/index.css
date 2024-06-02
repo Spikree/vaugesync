@@ -18,3 +18,8 @@ body {
   padding: 0;
   /* background: linear-gradient(#fdecff,#fff6d9,#cafde8); */
 }
+
+.app {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
