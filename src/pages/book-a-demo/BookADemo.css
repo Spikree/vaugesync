@@ -62,6 +62,10 @@ input {
     border: 1px solid black;
 }
 
+input::placeholder {
+    font-size: 16px;
+}
+
 .book-label {
     font-size: 20px;
     font-weight: 800px;
