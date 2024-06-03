@@ -5,7 +5,6 @@ const BookADemo = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Form submitted:');
   };
 
   const [country, setCountry] = useState({
