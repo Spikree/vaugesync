@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="hero-header">
           <h1 style={{ fontSize: "50px", marginBottom: "0px" }}>
             Grow your business on <br />
-            <span style={{ color: "#00e785" }}>WhatsApp</span>
+            <span style={{ color: "#3ABEF9" }}>WhatsApp</span>
           </h1>
           <div className="hero-desc">
             <p>
