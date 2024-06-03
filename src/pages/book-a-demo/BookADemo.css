@@ -57,7 +57,7 @@ select {
 }
 
 input {
-    padding: 12px;
+    padding: 16px;
     border-radius: 10px;
     border: 1px solid black;
 }
@@ -94,6 +94,10 @@ input {
     font-size: 15px;
 }
 
+.small-label {
+    color: gray;
+}
+
 .submit-button:active {
     background-color: #0f8c58;
 }
@@ -103,5 +107,14 @@ input {
         display: flex;
         flex-direction: column;
         gap: 10px;
+    }
+
+    .book-a-demo {
+        padding: 28px;
+        margin: 25px;
+    }   
+    
+    .small-label {
+        display: none;
     }
 }
