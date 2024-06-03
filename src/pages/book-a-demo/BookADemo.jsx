@@ -5,7 +5,23 @@ const BookADemo = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(formData.name);
+    console.log(formData.email);
+    console.log(formData.service);
+    console.log(phoneNumber);
   };
+
+  const [formData,setFormData] = useState({
+    name: "",
+    email: "",
+    service: ""
+  })
+
+  const onChangeHandler = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setFormData(formData=>({...formData,[name]:value}))
+   }
 
   const [country, setCountry] = useState({
     countryName: "uk",
@@ -49,20 +65,20 @@ const BookADemo = () => {
         {/* name */}
         <div className=" demo-form form-name">
           <label className='book-label' htmlFor="name">Name :</label>
-          <input placeholder='Please enter your name' type="text" />
+          <input name='name' onChange={onChangeHandler} value={formData.name} placeholder='Please enter your name' type="text" />
         </div>
 
         <div className="demo-form form-email">
           {/* email */}
           <label className='book-label' htmlFor="email">Email :</label>
           <label htmlFor="" className='small-label'>*To book your 1 on 1 demo use your business email.</label>
-          <input placeholder='email@gmail.com' type="text" />
+          <input name='email' onChange={onChangeHandler} value={formData.email} placeholder='email@gmail.com' type="text" />
         </div>
 
         <div className="demo-form form-help">
           {/* help */}
           <label className='book-label' htmlFor="">How can we help you :</label>
-          <select className='select-help'>
+          <select name='service' onChange={onChangeHandler} className='select-help'>
             <option value="please-select">Please select</option>
             <option value="bulk-broadcast">Bulk broadcast</option>
             <option value="chatbot-automation">Chatbot automation</option>
