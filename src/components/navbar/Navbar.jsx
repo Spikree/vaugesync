@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className='navbar'>
         <div className="logo">
             <Link to={'/'}>
-            <h1>Wavesync</h1>
+            <h1>vauge<span style={{color:"#3ABEF9"}}>sync</span></h1>
             </Link>
             
         </div>

@@ -7,7 +7,7 @@ export default function Footer() {
     return <>
         <div className='footer-main'>
             <div className="row-1">
-                <h1 style={{color:"white"}}>Wavesync</h1>
+                <h1 style={{color:"white"}}>vaugesync</h1>
                 <a>India | English</a>
             </div>
             <hr />
@@ -20,7 +20,7 @@ export default function Footer() {
                 </ul>
             </div>
             <div className="row-3">
-                <p>© {year} Wavesync. All rights reserved.</p>
+                <p>© {year} vaugesync. All rights reserved.</p>
             </div>
         </div>
     </>
