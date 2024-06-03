@@ -20,7 +20,7 @@ const Navbar = () => {
             </ul>
         </div>
         <div className="buttons">
-            <Link to={'/book-a-demo'} style={{fontWeight:"500",backgroundColor:"#3ABEF9"}} href="">Book Demo</Link>
+            <Link to={'/book-a-demo'} style={{fontWeight:"500",backgroundColor:"#A7E6FF"}} href="">Book Demo</Link>
             <a style={{fontWeight:"500"}} href="">Dashboard</a>
         </div>
     </div>
