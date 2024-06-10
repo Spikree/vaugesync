@@ -1,11 +1,32 @@
 import "./Hero.css";
 import arnav from "../../assets/arnav.jpg";
 import anvay from "../../assets/anvay.jpg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [heroImage, setHeroImage] = useState(anvay);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          entry.target.classList.add("show-once");
+        } else if (!entry.target.classList.contains("show-once")) {
+          entry.target.classList.remove("show");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    // Cleanup observer on component unmount
+    return () => {
+      hiddenElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   return (
     <div className="home">
@@ -26,7 +47,7 @@ const Hero = () => {
           <a className="one" href="">
             Free 7 Day Trial
           </a>
-          <Link to="/book-a-demo" className="two" href="">
+          <Link to="/book-a-demo" className="two">
             or book a Demo Today
           </Link>
         </div>
@@ -34,7 +55,7 @@ const Hero = () => {
       <div
         onMouseEnter={() => setHeroImage(arnav)}
         onMouseLeave={() => setHeroImage(anvay)}
-        className="image"
+        className="image hidden"
       >
         <img src={heroImage} alt="Hero" />
       </div>

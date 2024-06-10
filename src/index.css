@@ -2,11 +2,13 @@
 
 li {
   list-style: none;
+  cursor: pointer;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 * {
@@ -22,4 +24,8 @@ body {
 .app {
   padding-bottom: 0px;
   margin-bottom: 0px;
+}
+
+.logo {
+  cursor: pointer;
 }
