@@ -1,13 +1,26 @@
 import { useState } from "react";
+import axios from "axios";
 import "./BookADemo.css";
 
 const BookADemo = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData.name);
-    console.log(formData.email);
-    console.log(formData.service);
-    console.log(phoneNumber);
+
+    const data = {
+      name: formData.name,
+      email: formData.email,
+      service: formData.service,
+      phoneNumber: phoneNumber
+    };
+
+    axios.post('http://localhost:5000/submit', data)
+      .then(response => {
+        alert('Form submitted successfully');
+      })
+      .catch(error => {
+        alert('Error submitting form');
+        console.error(error);
+      });
   };
 
   const [formData, setFormData] = useState({
@@ -114,7 +127,7 @@ const BookADemo = () => {
         </p>
       </div>
 
-      <form action="">
+      <form onSubmit={handleSubmit}>
         {/* name */}
         <div className=" demo-form form-name">
           <label className="book-label" htmlFor="name">
@@ -203,9 +216,8 @@ const BookADemo = () => {
         </div>
 
         <button
-          onClick={handleSubmit}
           className="submit-button"
-          action="submit"
+          type="submit"
         >
           Schedule demo
         </button>
