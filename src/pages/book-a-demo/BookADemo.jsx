@@ -15,7 +15,13 @@ const BookADemo = () => {
 
     axios.post('http://localhost:5000/submit', data)
       .then(response => {
-        alert('Form submitted successfully');
+        console.log('Form submitted successfully');
+        setFormData({
+          name: "",
+          email: "",
+          service: "",
+        });
+        setPhoneNumber(country.number);
       })
       .catch(error => {
         alert('Error submitting form');
