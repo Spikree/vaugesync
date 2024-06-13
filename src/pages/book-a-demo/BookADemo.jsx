@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import "./BookADemo.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BookADemo = () => {
   const handleSubmit = (event) => {
@@ -15,7 +17,8 @@ const BookADemo = () => {
 
     axios.post('http://localhost:5000/submit', data)
       .then(response => {
-        console.log('Form submitted successfully');
+        // console.log('Form submitted successfully');
+        toast("Form submitted successfully");
         setFormData({
           name: "",
           email: "",
@@ -228,6 +231,7 @@ const BookADemo = () => {
           Schedule demo
         </button>
       </form>
+      <ToastContainer className="toast-red" />
     </div>
   );
 };
