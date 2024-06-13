@@ -105,6 +105,11 @@ input::placeholder {
 .submit-button:active {
     background-color: #A7E6FF;
 }
+/* 
+.toast-red {
+    background-color: red !important;
+    color: white !important;
+  } */
 
 @media (max-width: 717px) {
     .demo-form div {

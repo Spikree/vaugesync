@@ -231,7 +231,7 @@ const BookADemo = () => {
           Schedule demo
         </button>
       </form>
-      <ToastContainer className="toast-red" />
+      <ToastContainer />
     </div>
   );
 };
