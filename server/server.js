@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 const port = 5000;
@@ -36,6 +37,8 @@ const formSchema = new mongoose.Schema({
 const Form = mongoose.model('Form', formSchema);
 
 // Routes
+
+// Route to submit form data
 app.post('/submit', async (req, res) => {
     const formData = new Form(req.body);
     try {
@@ -44,6 +47,24 @@ app.post('/submit', async (req, res) => {
     } catch (error) {
         res.status(500).send('Error saving form data');
     }
+});
+
+// Route to get all form data
+app.get('/forms', async (req, res) => {
+    try {
+        const forms = await Form.find();
+        res.status(200).json(forms);
+    } catch (error) {
+        res.status(500).send('Error retrieving form data');
+    }
+});
+
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+// Anything that doesn't match the above, send back index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/../client/build/index.html'));
 });
 
 // Start the server
