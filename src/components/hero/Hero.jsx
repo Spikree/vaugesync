@@ -33,13 +33,12 @@ const Hero = () => {
       <div className="hero">
         <div className="hero-header">
           <h1 style={{ fontSize: "50px", marginBottom: "0px" }}>
-            Grow your business on <br />
+          Boost Your Business with <br />
             <span style={{ color: "#3ABEF9" }}>WhatsApp</span>
           </h1>
           <div className="hero-desc">
             <p>
-              Personalize communication and sell more with the WhatsApp Business
-              API platform that automates marketing, sales, service and support.
+            Enhance customer engagement and drive sales using the WhatsApp Business API. Automate your marketing, sales, customer service, and support for a seamless experience.
             </p>
           </div>
         </div>
