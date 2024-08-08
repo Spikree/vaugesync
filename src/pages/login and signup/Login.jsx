@@ -2,14 +2,20 @@ import { useState } from "react";
 import "./Login.css";
 import { FaEye } from "react-icons/fa";
 import { AiFillEyeInvisible } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isShowPassword, setIsShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handlePasswordShow = () => {
     setIsShowPassword(!isShowPassword);
+  };
+
+  const handleCreateAccount = () => {
+    navigate("/signup");
   };
 
   const onLogin = (event) => {
@@ -66,9 +72,11 @@ const Login = () => {
         <button type="submit">Login</button>
 
         <div className="sign-up-link">
-          <p>
+          <p style={{ textAlign: "center" }}>
             Don't have an account?{" "}
-            <span style={{ color: "#0077ED" }}>create an account</span>
+            <span onClick={handleCreateAccount} style={{ color: "#0077ED" }}>
+              create an account
+            </span>
           </p>
         </div>
       </form>

@@ -1,5 +1,5 @@
 .login {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,7 +51,8 @@ p {
     font-size: 45px;
 }
 
-.email-div {
+.email-div,
+.name-div {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -82,10 +83,31 @@ p {
 
 .eye-icon {
     padding-right: 20px;
+    font-size: 20px;
     color: gray;
 }
 
 .password-input input:focus {
     border: none;
     outline: none;
+}
+
+@media (max-width: 717px) {
+    .login form {
+        border: 2px solid black;
+        border-radius: 15px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        /* width: 400px; */
+    }
+
+    .login form div {
+        width: 300px;
+    }
+
+    .eye-icon {
+        font-size: 27px;
+    }
 }
