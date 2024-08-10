@@ -1,7 +1,19 @@
+import { useEffect } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import ProfileInfo from "../profile info/ProfileInfo";
 
-const Navbar = () => {
+const Navbar = ({ setIsLoggedIn, isLoggedIn }) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setIsLoggedIn(true);
+    } else {
+      navigate("/");
+    }
+  }, []);
+
   return (
     <div className="navbar">
       <div className="logo">
@@ -26,22 +38,26 @@ const Navbar = () => {
                 <li><a href="">Resources</a></li> */}
         </ul>
       </div>
-      <div className="buttons">
-        <Link
-          to={"/book-a-demo"}
-          style={{ fontWeight: "500", backgroundColor: "#A7E6FF" }}
-          href=""
-        >
-          Book Demo
-        </Link>
-        <Link
-          to={"/login"}
-          style={{ fontWeight: "500", backgroundColor: "#A7E6FF" }}
-          href=""
-        >
-          Log in
-        </Link>
-      </div>
+      {isLoggedIn ? (
+        <ProfileInfo />
+      ) : (
+        <div className="buttons">
+          <Link
+            to={"/book-a-demo"}
+            style={{ fontWeight: "500", backgroundColor: "#A7E6FF" }}
+            href=""
+          >
+            Book Demo
+          </Link>
+          <Link
+            to={"/login"}
+            style={{ fontWeight: "500", backgroundColor: "#A7E6FF" }}
+            href=""
+          >
+            Log in
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
