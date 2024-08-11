@@ -1,0 +1,33 @@
+.user-profile-left-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 40px;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.profile-pic {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    background-color: black;
+    color: white;
+}
+
+.user-profile-options ul {
+    padding: 0px;
+}
+
+.user-profile-options ul li{
+    padding: 10px 0px 10px 0px;
+    font-size: 18px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}

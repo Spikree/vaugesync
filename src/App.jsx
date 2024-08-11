@@ -7,6 +7,7 @@ import Login from "./pages/login and signup/Login";
 import SignUp from "./pages/login and signup/SignUp";
 import Main from "./pages/main/Main";
 import { useState } from "react";
+import UserProfile from "./pages/user-profile/UserProfile";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -25,6 +26,7 @@ const App = () => {
           element={<SignUp setIsLoggedIn={setIsLoggedIn} />}
         />
         <Route path="/main" element={<Main />} />
+        <Route path="/user-profile" element={<UserProfile />} />
       </Routes>
       <Footer />
     </div>

@@ -1,0 +1,88 @@
+.account-security {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: center;
+}
+
+.account-security .header {
+    border-bottom: 1px solid black;
+    margin-bottom: 0;
+    
+}
+
+.account-security .email {
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.account-security .change-password {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    border-bottom: 1px solid black;
+}
+
+.account-security .change-password form input {
+    width: 400px;
+}
+
+.account-security .change-password form button {
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+
+.account-security .change-password form {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+@media (max-width: 717px) {
+    .account-security .change-password form {
+        width: 300px;
+    }
+
+    .account-security .change-password form input {
+        width: 300px;
+    }
+
+    .account-security .header {
+        margin: 0;
+    }
+
+    .account-security {
+        border-top: 1px solid black;
+    }
+}
+
+
+@media (max-width: 944px) {
+    .account-security .change-password form {
+        width: 300px;
+    }
+
+    .account-security .change-password form input {
+        width: 300px;
+    }
+
+    .account-security .header {
+        margin: 0;
+    }
+
+    .account-security {
+        border-top: 1px solid black;
+    }
+}
