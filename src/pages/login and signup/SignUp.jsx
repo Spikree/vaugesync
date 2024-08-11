@@ -116,6 +116,7 @@ const SignUp = ({ setIsLoggedIn }) => {
               <FaEye className="eye-icon" onClick={handlePasswordShow} />
             )}
           </div>
+          <p style={{ color: "#3498db" }}>forgot password?</p>
         </div>
 
         <button type="submit">Sign up</button>

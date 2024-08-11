@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import "./ProfileInfo.css";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getInitials } from "../../helper/getInitials";
+import PopUp from "../pop up/PopUp";
 
 const ProfileInfo = () => {
   const url = import.meta.env.VITE_BACKEND_URL;
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+  const [showPopUp, setShowPopUp] = useState(false);
 
   const [userName, setUserName] = useState("loading");
 
@@ -38,18 +40,18 @@ const ProfileInfo = () => {
 
   return (
     <div className="profile-info">
-      <Link to={"/user-account"}>
-        <div className="user-profile">{getInitials(userName)}</div>
-      </Link>
-      <div className="user-info">
-        <p style={{ marginBottom: "2px" }}>{userName}</p>
-        <a
-          style={{ border: "1px solid gray", textAlign: "center" }}
-          onClick={() => onLogout()}
-        >
-          Logout
-        </a>
+      <div
+        style={{ cursor: "pointer" }}
+        onClick={() => setShowPopUp(!showPopUp)}
+        className="user-profile"
+      >
+        {getInitials(userName)}
       </div>
+
+      <div className="user-info">
+        <p style={{ marginBottom: "2px", cursor: "pointer" }}>{userName}</p>
+      </div>
+      <PopUp showPopUp={showPopUp} onLogout={onLogout} />
     </div>
   );
 };

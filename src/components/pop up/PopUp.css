@@ -1,0 +1,27 @@
+.pop-up {
+    border: 1px solid black;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    border-radius: 12px;
+    position: fixed;
+    top: 100px;
+}
+
+.pop-up ul {
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pop-up ul li {
+    border: 1px solid black;
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+}
+
+.pop-up ul li:active {
+    background-color: rgb(58, 190, 249);
+    color: white;
+}
