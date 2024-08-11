@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./ProfileInfo.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { getInitials } from "../../helper/getInitials";
 import PopUp from "../pop up/PopUp";
+import { StoreContext } from "../../context/StoreContext";
 
 const ProfileInfo = () => {
   const url = import.meta.env.VITE_BACKEND_URL;
@@ -12,6 +13,7 @@ const ProfileInfo = () => {
   const [showPopUp, setShowPopUp] = useState(false);
 
   const [userName, setUserName] = useState("loading");
+  const { setUser } = useContext(StoreContext);
 
   const onLogout = () => {
     localStorage.clear();
@@ -26,6 +28,9 @@ const ProfileInfo = () => {
             Authorization: `Bearer ${token}`,
           },
         });
+
+        // console.log(response.data.user);
+        setUser(response.data.user);
 
         const userName = response.data.user.name;
 
