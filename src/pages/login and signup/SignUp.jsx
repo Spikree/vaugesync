@@ -11,6 +11,7 @@ const SignUp = ({ setIsLoggedIn }) => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [isShowPassword, setIsShowPassword] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,7 +22,19 @@ const SignUp = ({ setIsLoggedIn }) => {
 
   const url = import.meta.env.VITE_BACKEND_URL;
 
+  const validatePassword = (password) => {
+    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return regex.test(password);
+  };
+
   const createAccount = async () => {
+    if (!validatePassword(password)) {
+      setError(
+        "Password must be at least 8 characters long, include one uppercase letter, one symbol, and one number.",
+      );
+      return;
+    }
+
     setPassword("");
     setName("");
     setEmail("");
@@ -117,6 +130,11 @@ const SignUp = ({ setIsLoggedIn }) => {
             )}
           </div>
           <p style={{ color: "#3498db" }}>forgot password?</p>
+        </div>
+        <div>
+          <p style={{ color: "red", textWrap: "wrap", width: "400px" }}>
+            {error}
+          </p>
         </div>
 
         <button type="submit">Sign up</button>

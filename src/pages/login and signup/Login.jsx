@@ -12,6 +12,7 @@ const Login = ({ setIsLoggedIn }) => {
   const [password, setPassword] = useState("");
   const [isShowPassword, setIsShowPassword] = useState(false);
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -46,7 +47,8 @@ const Login = ({ setIsLoggedIn }) => {
         navigate("/main");
       }
     } catch (error) {
-      toast.error(error.response.data.message);
+      // toast.error(error.response.data.message);
+      setError(error.response.data.message);
     }
   };
 
@@ -102,6 +104,18 @@ const Login = ({ setIsLoggedIn }) => {
             )}
           </div>
           <p style={{ color: "#3498db" }}>forgot password?</p>
+        </div>
+        <div>
+          <p
+            style={{
+              color: "red",
+              textWrap: "wrap",
+              width: "400px",
+              textAlign: "center",
+            }}
+          >
+            {error}
+          </p>
         </div>
 
         <button type="submit">Login</button>

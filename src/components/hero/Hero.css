@@ -7,7 +7,7 @@
     margin: 50px;
 }
 
-.image img{
+.image img {
     height: 450px;
     transition: 2.5ms;
 }
@@ -33,7 +33,7 @@
 .hero-buttons .one:hover {
     border-radius: 40px;
     transition: 0.5s;
-    background-color: #A7E6FF;
+    background-color: #a7e6ff;
 }
 
 .hero-buttons .two {
@@ -68,11 +68,16 @@
     transform: translate(0);
 }
 
+.login-btn {
+    display: none;
+}
+
 @media (max-width: 717px) {
     .hero-buttons {
         display: flex;
         flex-direction: column;
         gap: 5px;
+        margin-top: 0%;
     }
 
     .hero-buttons .one {
@@ -90,7 +95,21 @@
         color: gray;
     }
 
-    .image img{
+    .login-btn {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .login-btn a {
+        border: 2px solid black;
+        padding: 8px 12px 8px 12px;
+        border-radius: 12px;
+    }
+
+    .image img {
         height: 350px;
         margin-top: 40px;
     }

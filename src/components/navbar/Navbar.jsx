@@ -23,21 +23,21 @@ const Navbar = ({ setIsLoggedIn, isLoggedIn }) => {
           </h1>
         </Link>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">Our firm</a>
-          </li>
-          <li>
-            <a href="">services</a>
-          </li>
-          {/* <li><a href="">Integrations</a></li>
-                <li><a href="">Resources</a></li> */}
-        </ul>
-      </div>
+      {!isLoggedIn && (
+        <div className="nav-items">
+          <ul>
+            <li>
+              <a href="">Home</a>
+            </li>
+            <li>
+              <a href="">Our firm</a>
+            </li>
+            <li>
+              <a href="">services</a>
+            </li>
+          </ul>
+        </div>
+      )}
       {isLoggedIn ? (
         <ProfileInfo />
       ) : (

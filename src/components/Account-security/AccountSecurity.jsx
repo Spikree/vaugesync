@@ -12,8 +12,28 @@ const AccountSecurity = () => {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [retypedNewPassword, setRetypedNewPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const validatePassword = (password) => {
+    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return regex.test(password);
+  };
 
   const changePassword = async (e) => {
+    e.preventDefault();
+
+    if (!validatePassword(newPassword)) {
+      setError(
+        "Password must be at least 8 characters long, include one uppercase letter, one symbol, and one number.",
+      );
+      return;
+    }
+
+    if (newPassword !== retypedNewPassword) {
+      setError("New password and re-typed password do not match.");
+      return;
+    }
+
     e.preventDefault();
     try {
       const response = await axios.patch(
@@ -35,8 +55,10 @@ const AccountSecurity = () => {
       setRetypedNewPassword("");
 
       toast.success(response.data.message);
+      setError("");
     } catch (error) {
-      toast.error(error.response.data.message);
+      // toast.error(error.response.data.message);
+      setError(error.response.data.message);
     }
   };
 
@@ -90,6 +112,7 @@ const AccountSecurity = () => {
               id=""
             />
           </div>
+          <p style={{ color: "red" }}>{error}</p>
 
           <button>Change password</button>
         </form>
