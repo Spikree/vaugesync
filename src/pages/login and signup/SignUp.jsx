@@ -23,18 +23,28 @@ const SignUp = ({ setIsLoggedIn }) => {
   const url = import.meta.env.VITE_BACKEND_URL;
 
   const validatePassword = (password) => {
-    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    return regex.test(password);
+    const capitalLetterPattern = /[A-Z]/;
+    const symbolPattern = /[!@#$%^&*(),.?":{}|<>]/;
+
+    if (password.length < 8) {
+      return "Password should be more than 8 characters";
+    }
+    if (!capitalLetterPattern.test(password)) {
+      return "Password should contain at least one capital letter";
+    }
+    if (!symbolPattern.test(password)) {
+      return "Password should contain at least one symbol";
+    }
+    return "";
+  };
+
+  const handlePasswordChange = (e) => {
+    const password = e.target.value;
+    setPassword(password);
+    setError(validatePassword(password));
   };
 
   const createAccount = async () => {
-    if (!validatePassword(password)) {
-      setError(
-        "Password must be at least 8 characters long, include one uppercase letter, one symbol, and one number.",
-      );
-      return;
-    }
-
     setPassword("");
     setName("");
     setEmail("");
@@ -113,9 +123,7 @@ const SignUp = ({ setIsLoggedIn }) => {
           <div className="password-input">
             <input
               value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
+              onChange={(e) => handlePasswordChange(e)}
               type={isShowPassword ? "text" : "password"}
               required
               placeholder="please eneter your password"

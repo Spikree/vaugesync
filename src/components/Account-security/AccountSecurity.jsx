@@ -14,23 +14,41 @@ const AccountSecurity = () => {
   const [retypedNewPassword, setRetypedNewPassword] = useState("");
   const [error, setError] = useState("");
 
-  const validatePassword = (password) => {
-    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    return regex.test(password);
+  const validatePassword = (newPass, retypedPass) => {
+    const capitalLetterPattern = /[A-Z]/;
+    const symbolPattern = /[!@#$%^&*(),.?":{}|<>]/;
+
+    if (newPass.length < 8) {
+      return "Password should be more than 8 characters";
+    }
+    if (!capitalLetterPattern.test(newPass)) {
+      return "Password should contain at least one capital letter";
+    }
+    if (!symbolPattern.test(newPass)) {
+      return "Password should contain at least one symbol";
+    }
+    if (retypedPass && newPass !== retypedPass) {
+      return "Retyped password must be the same as the new password";
+    }
+    return "";
+  };
+
+  const onChangeNewPass = (e) => {
+    const newPass = e.target.value;
+    setNewPassword(newPass);
+    setError(validatePassword(newPass, retypedNewPassword));
+  };
+
+  const onChangeRetypedPass = (e) => {
+    const retypedPass = e.target.value;
+    setRetypedNewPassword(retypedPass);
+    setError(validatePassword(newPassword, retypedPass));
   };
 
   const changePassword = async (e) => {
     e.preventDefault();
 
-    if (!validatePassword(newPassword)) {
-      setError(
-        "Password must be at least 8 characters long, include one uppercase letter, one symbol, and one number.",
-      );
-      return;
-    }
-
-    if (newPassword !== retypedNewPassword) {
-      setError("New password and re-typed password do not match.");
+    if (error.length != 0) {
       return;
     }
 
@@ -95,7 +113,7 @@ const AccountSecurity = () => {
           <div className="new-password">
             <input
               value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
+              onChange={(e) => onChangeNewPass(e)}
               placeholder="Enter new password"
               type="text"
               name=""
@@ -105,7 +123,7 @@ const AccountSecurity = () => {
           <div className="retype-new-password">
             <input
               value={retypedNewPassword}
-              onChange={(e) => setRetypedNewPassword(e.target.value)}
+              onChange={(e) => onChangeRetypedPass(e)}
               placeholder="Re-type new password"
               type="text"
               name=""
