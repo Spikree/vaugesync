@@ -8,7 +8,6 @@
 .account-security .header {
     border-bottom: 1px solid black;
     margin-bottom: 0;
-    
 }
 
 .account-security .email {
@@ -50,6 +49,38 @@
     gap: 12px;
 }
 
+.new-password,
+.current-password,
+.retype-new-password {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding: 0px 15px 0px 15px;
+    border-radius: 12px;
+    color: gray;
+}
+
+.new-password .icon,
+.current-password .icon,
+.retype-new-password .icon {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.new-password input,
+.current-password input,
+.retype-new-password input {
+    border: none;
+}
+
+.new-password input:focus,
+.current-password input:focus,
+.retype-new-password input:focus {
+    border: none;
+    outline: none;
+}
+
 @media (max-width: 717px) {
     .account-security .change-password form {
         width: 300px;
@@ -67,7 +98,6 @@
         border-top: 1px solid black;
     }
 }
-
 
 @media (max-width: 944px) {
     .account-security .change-password form {

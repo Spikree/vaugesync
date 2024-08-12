@@ -1,31 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 li {
-  list-style: none;
-  cursor: pointer;
+    list-style: none;
+    cursor: pointer;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 * {
-  font-family: "Outfit", sans-serif;
+    font-family: "Outfit", sans-serif;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  /* background: linear-gradient(#fdecff,#fff6d9,#cafde8); */
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(#fdecff,#fff6d9,#cafde8); */
 }
 
 .app {
-  padding-bottom: 0px;
-  margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .logo {
-  cursor: pointer;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
 }

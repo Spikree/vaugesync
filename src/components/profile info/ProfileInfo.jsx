@@ -45,6 +45,10 @@ const ProfileInfo = () => {
 
   return (
     <div className="profile-info">
+      <div className="user-info">
+        <p style={{ marginBottom: "2px", cursor: "pointer" }}>{userName}</p>
+      </div>
+      <PopUp showPopUp={showPopUp} onLogout={onLogout} />
       <div
         style={{ cursor: "pointer" }}
         onClick={() => setShowPopUp(!showPopUp)}
@@ -52,11 +56,6 @@ const ProfileInfo = () => {
       >
         {getInitials(userName)}
       </div>
-
-      <div className="user-info">
-        <p style={{ marginBottom: "2px", cursor: "pointer" }}>{userName}</p>
-      </div>
-      <PopUp showPopUp={showPopUp} onLogout={onLogout} />
     </div>
   );
 };

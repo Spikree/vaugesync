@@ -5,6 +5,8 @@
     border-radius: 12px;
     position: fixed;
     top: 100px;
+    width: 90px;
+    background-color: white;
 }
 
 .pop-up ul {
@@ -16,12 +18,17 @@
 }
 
 .pop-up ul li {
-    border: 1px solid black;
-    padding: 5px 10px 5px 10px;
     border-radius: 8px;
+    text-align: left;
 }
 
 .pop-up ul li:active {
     background-color: rgb(58, 190, 249);
     color: white;
+}
+
+@media (max-width: 717px) {
+    .pop-up {
+        left: 250px;
+    }
 }

@@ -4,6 +4,7 @@ import "./AccountSecurity.css";
 import { useContext, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const AccountSecurity = () => {
   const { user } = useContext(StoreContext);
@@ -13,6 +14,21 @@ const AccountSecurity = () => {
   const [newPassword, setNewPassword] = useState("");
   const [retypedNewPassword, setRetypedNewPassword] = useState("");
   const [error, setError] = useState("");
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, SetShowNewPassword] = useState(false);
+  const [showRetypedPassword, setShowRetypedPassword] = useState(false);
+
+  const handleShowPassword = (e) => {
+    const passwordType = e.target.getAttribute("data-password");
+
+    if (passwordType === "cur-password") {
+      setShowCurrentPassword(!showCurrentPassword);
+    } else if (passwordType === "new-password") {
+      SetShowNewPassword(!showNewPassword);
+    } else if (passwordType === "retyped-password") {
+      setShowRetypedPassword(!showRetypedPassword);
+    }
+  };
 
   const validatePassword = (newPass, retypedPass) => {
     const capitalLetterPattern = /[A-Z]/;
@@ -48,11 +64,10 @@ const AccountSecurity = () => {
   const changePassword = async (e) => {
     e.preventDefault();
 
-    if (error.length != 0) {
+    if (error) {
       return;
     }
 
-    e.preventDefault();
     try {
       const response = await axios.patch(
         url + "/change-password",
@@ -75,8 +90,7 @@ const AccountSecurity = () => {
       toast.success(response.data.message);
       setError("");
     } catch (error) {
-      // toast.error(error.response.data.message);
-      setError(error.response.data.message);
+      setError(error.response?.data?.message || "An error occurred");
     }
   };
 
@@ -99,40 +113,72 @@ const AccountSecurity = () => {
 
       <div className="change-password">
         <h2>Password</h2>
-        <form onSubmit={(e) => changePassword(e)}>
+        <form onSubmit={changePassword}>
           <div className="current-password">
             <input
               value={oldPassword}
               onChange={(e) => setOldPassword(e.target.value)}
               placeholder="current password"
-              type="text"
-              name=""
-              id=""
+              type={showCurrentPassword ? "text" : "password"}
             />
+            {showCurrentPassword ? (
+              <FaEyeSlash
+                className="icon"
+                data-password="cur-password"
+                onClick={(e) => handleShowPassword(e)}
+              />
+            ) : (
+              <FaEye
+                className="icon"
+                data-password="cur-password"
+                onClick={(e) => handleShowPassword(e)}
+              />
+            )}
           </div>
           <div className="new-password">
             <input
               value={newPassword}
-              onChange={(e) => onChangeNewPass(e)}
+              onChange={onChangeNewPass}
               placeholder="Enter new password"
-              type="text"
-              name=""
-              id=""
+              type={showNewPassword ? "text" : "password"}
             />
+            {showNewPassword ? (
+              <FaEyeSlash
+                className="icon"
+                data-password="new-password"
+                onClick={(e) => handleShowPassword(e)}
+              />
+            ) : (
+              <FaEye
+                className="icon"
+                data-password="new-password"
+                onClick={(e) => handleShowPassword(e)}
+              />
+            )}
           </div>
           <div className="retype-new-password">
             <input
               value={retypedNewPassword}
-              onChange={(e) => onChangeRetypedPass(e)}
+              onChange={onChangeRetypedPass}
               placeholder="Re-type new password"
-              type="text"
-              name=""
-              id=""
+              type={showRetypedPassword ? "text" : "password"}
             />
+            {showRetypedPassword ? (
+              <FaEyeSlash
+                className="icon"
+                data-password="retyped-password"
+                onClick={(e) => handleShowPassword(e)}
+              />
+            ) : (
+              <FaEye
+                className="icon"
+                data-password="retyped-password"
+                onClick={(e) => handleShowPassword(e)}
+              />
+            )}
           </div>
           <p style={{ color: "red" }}>{error}</p>
-
-          <button>Change password</button>
+          <button disabled={!!error}>Change password</button>
         </form>
       </div>
     </div>
