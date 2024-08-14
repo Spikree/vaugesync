@@ -150,7 +150,10 @@ const SignUp = ({ setIsLoggedIn }) => {
         <div className="sign-up-link">
           <p style={{ textAlign: "center" }}>
             Already have an account?{" "}
-            <span onClick={handleLoginAccount} style={{ color: "#0077ED" }}>
+            <span
+              onClick={handleLoginAccount}
+              style={{ color: "#0077ED", cursor: "pointer" }}
+            >
               login
             </span>
           </p>

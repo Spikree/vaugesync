@@ -103,7 +103,9 @@ const Login = ({ setIsLoggedIn }) => {
               <FaEye className="eye-icon" onClick={handlePasswordShow} />
             )}
           </div>
-          <p style={{ color: "#3498db" }}>forgot password?</p>
+          <p style={{ color: "#3498db", cursor: "pointer" }}>
+            forgot password?
+          </p>
         </div>
         <div>
           <p
@@ -123,7 +125,10 @@ const Login = ({ setIsLoggedIn }) => {
         <div className="sign-up-link">
           <p style={{ textAlign: "center" }}>
             Don't have an account?{" "}
-            <span onClick={handleCreateAccount} style={{ color: "#0077ED" }}>
+            <span
+              onClick={handleCreateAccount}
+              style={{ color: "#0077ED", cursor: "pointer" }}
+            >
               create an account
             </span>
           </p>

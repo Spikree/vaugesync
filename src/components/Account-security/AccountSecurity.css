@@ -97,6 +97,12 @@
     .account-security {
         border-top: 1px solid black;
     }
+
+    .new-password,
+    .current-password,
+    .retype-new-password {
+        width: 300px;
+    }
 }
 
 @media (max-width: 944px) {

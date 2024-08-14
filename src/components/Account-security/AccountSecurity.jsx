@@ -112,7 +112,7 @@ const AccountSecurity = () => {
       </div>
 
       <div className="change-password">
-        <h2>Password</h2>
+        <h2>change password</h2>
         <form onSubmit={changePassword}>
           <div className="current-password">
             <input
