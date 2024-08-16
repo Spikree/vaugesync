@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import ProfileInfo from "../profile info/ProfileInfo";
+import Facebook from "../facebook login/Facebook";
 
 const Navbar = ({ setIsLoggedIn, isLoggedIn }) => {
   const navigate = useNavigate();
@@ -56,6 +57,7 @@ const Navbar = ({ setIsLoggedIn, isLoggedIn }) => {
           >
             Log in
           </Link>
+          <Facebook />
         </div>
       )}
     </div>
