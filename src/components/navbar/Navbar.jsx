@@ -36,6 +36,9 @@ const Navbar = ({ setIsLoggedIn, isLoggedIn }) => {
             <li>
               <a href="">services</a>
             </li>
+            <li>
+              <a href="">privacy policy</a>
+            </li>
           </ul>
         </div>
       )}
