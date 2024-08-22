@@ -41,7 +41,7 @@ function Facebook() {
         <>
           {loading && <p>Loading...</p>}
           <FacebookLogin
-            appId="291702253998214"
+            appId=""
             autoLoad={false}
             fields="name,email,picture"
             onClick={componentClicked}
