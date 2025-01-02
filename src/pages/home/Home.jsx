@@ -21,8 +21,8 @@ const Home = ({ setIsLoggedIn }) => {
     <div className="home-main">
       <Hero />
       <Carousel />
-      {/* <Resutlts/>
-      <Features/> */}
+      <Resutlts/>
+      <Features/>
     </div>
   );
 };

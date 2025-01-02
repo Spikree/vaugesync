@@ -60,7 +60,7 @@ const Navbar = ({ setIsLoggedIn, isLoggedIn }) => {
           >
             Log in
           </Link>
-          <Facebook />
+          {/* <Facebook /> */}
         </div>
       )}
     </div>
